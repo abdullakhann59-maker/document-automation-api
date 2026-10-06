@@ -1,0 +1,71 @@
+# Git
+.git
+.gitignore
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+credentials.json
+service-account.json
+secrets.json
+
+# Virtual environments
+myenv/
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache & tests
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+.coverage
+
+# Logs & OS
+*.log
+logs/
+.DS_Store
+Thumbs.db
+
+# Runtime databases & Vector stores
+*.db
+*.sqlite
+*.sqlite3
+data/app.db
+data/chroma/
+data/outputs/
+data/tmp/
+chroma/
+chromadb/
+chroma_db/
+uploads/
+outputs/
+output/
+tmp/
+temp/
+
+# Model & Framework Caches
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+model_cache/
+models_cache/
+huggingface_cache/
+.cache/
+.easyocr/
+
+# IDE
+.vscode/
+.idea/
+node_modules/

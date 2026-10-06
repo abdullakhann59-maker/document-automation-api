@@ -1,0 +1,16 @@
+# Install the CPU build of PyTorch first (much smaller than the default CUDA build):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+fastapi
+uvicorn[standard]
+python-multipart
+httpx
+pydantic>=2
+pydantic-settings
+pymupdf
+opencv-python-headless
+numpy
+pillow
+easyocr
+rapidfuzz
+chromadb
+pytest

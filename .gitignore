@@ -1,0 +1,74 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+credentials.json
+service-account.json
+secrets.json
+
+# Virtual Environments
+myenv/
+venv/
+.venv/
+env/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*.pyo
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+logs/
+
+# Databases & Runtime Vector Store
+*.db
+*.sqlite
+*.sqlite3
+data/app.db
+data/chroma/
+data/outputs/
+data/tmp/
+chroma/
+chromadb/
+chroma_db/
+uploads/
+output/
+outputs/
+tmp/
+temp/
+
+# Model & Framework Caches
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+model_cache/
+models_cache/
+huggingface_cache/
+.cache/
+.easyocr/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Dependencies
+node_modules/

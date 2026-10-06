@@ -1,0 +1,45 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: document-automation-api
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_URL=http://ollama:11434
+      - LLM_MODEL=${LLM_MODEL:-qwen2.5:7b}
+      - EMBED_MODEL=${EMBED_MODEL:-nomic-embed-text}
+      - API_KEY=${API_KEY:-change-me}
+      - DATA_DIR=/app/data
+      - HINTS_ENABLED=${HINTS_ENABLED:-true}
+      - LLM_TIMEOUT_SEC=${LLM_TIMEOUT_SEC:-600}
+    volumes:
+      - app_data:/app/data
+    depends_on:
+      - ollama
+    restart: unless-stopped
+    networks:
+      - doc_net
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    networks:
+      - doc_net
+
+volumes:
+  app_data:
+    name: document_automation_app_data
+  ollama_data:
+    name: document_automation_ollama_data
+
+networks:
+  doc_net:
+    name: document_automation_network
+    driver: bridge
